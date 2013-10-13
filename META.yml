@@ -29,4 +29,4 @@ resources:
   bugtracker: https://github.com/plicease/anyevent-git-wrapper/issues
   homepage: http://perl.wdlabs.com/AnyEvent-Git-Wrapper/
   repository: git://github.com/plicease/anyevent-git-wrapper.git
-version: 0.04
+version: 0.05

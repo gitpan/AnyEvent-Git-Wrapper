@@ -3,7 +3,7 @@ NAME
     blocking
 
 VERSION
-    version 0.04
+    version 0.05
 
 SYNOPSIS
      use AnyEvent::Git::Wrapper;

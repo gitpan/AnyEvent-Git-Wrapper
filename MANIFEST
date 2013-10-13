@@ -9,7 +9,9 @@ META.yml
 README
 dist.ini
 lib/AnyEvent/Git/Wrapper.pm
+t/00_diag.pl
 t/00_diag.t
+t/00_diag.txt
 t/basic.t
 t/basic_nb.t
 t/git_binary.t

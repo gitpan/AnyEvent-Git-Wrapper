@@ -13,7 +13,7 @@ use Git::Wrapper::Log;
 use Scalar::Util qw( blessed );
 
 # ABSTRACT: Wrap git command-line interface without blocking
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 
 sub new
@@ -344,7 +344,7 @@ AnyEvent::Git::Wrapper - Wrap git command-line interface without blocking
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
