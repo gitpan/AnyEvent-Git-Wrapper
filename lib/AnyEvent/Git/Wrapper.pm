@@ -13,7 +13,7 @@ use Git::Wrapper::Log;
 use Scalar::Util qw( blessed );
 
 # ABSTRACT: Wrap git command-line interface without blocking
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 sub new
@@ -70,11 +70,10 @@ sub RUN
   my @err;
 
   my $ipc = AnyEvent::Open3::Simple->new(
-    stdin => $in,
     on_stdout => \@out,
     on_stderr => \@err,
     on_error  => sub {
-      my($error) = @_;
+      #my($error) = @_;
       $cv->croak(
         Git::Wrapper::Exception->new(
           output => \@out,
@@ -84,7 +83,7 @@ sub RUN
       );
     },
     on_exit   => sub {
-      my($proc, $exit, $signal) = @_;
+      my(undef, $exit, $signal) = @_;
       
       # borrowed from superclass, see comment there
       my $stupid_status = $cmd eq 'status' && @out && ! @err;
@@ -114,8 +113,10 @@ sub RUN
     
     my @cmd = ( $self->git, @$parts );
     
-    local $ENV{GIT_EDITOR} = '';
-    $ipc->run(@cmd);
+    local $ENV{GIT_EDITOR} = $^O eq 'MSWin32' ? 'cmd /c ""' : '';
+    $ipc->run(@cmd, \$in);
+    
+    undef $d;
   };
   
   $cv;
@@ -338,13 +339,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 AnyEvent::Git::Wrapper - Wrap git command-line interface without blocking
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
