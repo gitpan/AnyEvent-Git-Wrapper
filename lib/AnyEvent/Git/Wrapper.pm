@@ -13,7 +13,7 @@ use Git::Wrapper::Log;
 use Scalar::Util qw( blessed );
 
 # ABSTRACT: Wrap git command-line interface without blocking
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 
 sub new
@@ -113,7 +113,7 @@ sub RUN
     
     my @cmd = ( $self->git, @$parts );
     
-    local $ENV{GIT_EDITOR} = $^O eq 'MSWin32' ? 'cmd /c ""' : '';
+    local $ENV{GIT_EDITOR} = $^O eq 'MSWin32' ? 'cmd /c "exit 2"' : '';
     $ipc->run(@cmd, \$in);
     
     undef $d;
@@ -347,7 +347,7 @@ AnyEvent::Git::Wrapper - Wrap git command-line interface without blocking
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 

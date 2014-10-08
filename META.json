@@ -4,7 +4,7 @@
       "Graham Ollis <plicease@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.141170",
+   "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "perl_5"
    ],
@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.28"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.28"
          }
       },
       "runtime" : {
@@ -48,15 +48,15 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/plicease/anyevent-git-wrapper/issues"
+         "web" : "https://github.com/plicease/AnyEvent-Git-Wrapper/issues"
       },
-      "homepage" : "http://perl.wdlabs.com/AnyEvent-Git-Wrapper/",
+      "homepage" : "http://perl.wdlabs.com/AnyEvent-Git-Wrapper",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/plicease/anyevent-git-wrapper.git",
-         "web" : "https://github.com/plicease/anyevent-git-wrapper"
+         "url" : "git://github.com/plicease/AnyEvent-Git-Wrapper.git",
+         "web" : "https://github.com/plicease/AnyEvent-Git-Wrapper"
       }
    },
-   "version" : "0.06"
+   "version" : "0.07"
 }
 

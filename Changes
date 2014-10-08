@@ -1,5 +1,8 @@
 Revision history for AnyEvent-Git-Wrapper
 
+0.07      2014-10-08 11:25:36 -0400
+  - fix for Strawberry Perl 5.20
+
 0.06      2014-05-15 08:40:54 -0400
   - MSWin32 compat (prereq Git::Wrapper still unreliable with MSWin32)
   - fix deprecation wanrning with AnyEvent::Open3::Simple
